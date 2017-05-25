@@ -1,0 +1,17 @@
+{
+  "name": "ng-node-chatroom",
+  "description": "",
+  "main": "",
+  "authors": [
+    "james <jamesolof@startmail.com>"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
