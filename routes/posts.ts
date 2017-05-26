@@ -5,13 +5,12 @@ var router = express.Router();
 
 /* GET users listing. */
 router.get('/', function(req, res, next){
-  res.send(Message.find({})
-    .then((messages) =>{
+    Message.find().then((messages) =>{
         res.json(messages)
     }).catch((err) => {
         res.status(500);
         console.log(err)}
-  ));
+  );
 });
 
 router.post('/', function(req, res, next){
@@ -19,6 +18,7 @@ router.post('/', function(req, res, next){
     let newpost = new Message;
     newpost.text = req.body.text;
     newpost.user = req.body.user;
+    newpost.time = req.body.time;
     if(newpost){
         newpost.save(newpost)
             .then((r) => {
