@@ -8,7 +8,11 @@ namespace chatroom.services{
         public getMessages(){
             return this.$http.get('/posts')
             .then((result) => {
-                return result.data;
+                let posts: models.post[] = <models.post[]>result.data;
+                for(let i=0; i<posts.length; i++){
+                    posts[i].time = new Date(posts[i].time)
+                }
+                return posts;
             })
             .catch((err) => console.log('cannae get')    
         )};

@@ -1,10 +1,15 @@
 <h2> this is a chatroom?</h2>
 
-<div>
-    <ul ng-repeat="post in vm.posts">
-        <li> {{post.user}}  :  {{post.text}}   //  {{post.time}} </li>
-    </ul>
+<div class="chatbody">
+    <div class="textarea">
+        <ul ng-repeat="post in vm.posts">
+            <li><span class="timestamp">({{vm.manageTime(post.time)}})</span> 
+                <span class="username">{{post.user}}</span>
+                <span class="message">{{post.text}}</span>
+            </li>
+        </ul>
+    </div>
+    <input type="text" ng-model="vm.formData.text" > <button ng-click="vm.postMessage()">Post</button>
 </div>
 
 
-<input type="text" ng-model="vm.formData.text" > <button ng-click="vm.postMessage()">Post</button>
