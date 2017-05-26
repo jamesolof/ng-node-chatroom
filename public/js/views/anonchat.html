@@ -1,0 +1,10 @@
+<h2> this is a chatroom?</h2>
+
+<div>
+    <ul ng-repeat="post in vm.posts">
+        <li> {{post.user}}  :  {{post.text}}   //  {{post.time}} </li>
+    </ul>
+</div>
+
+
+<input type="text" ng-model="vm.formData.text" > </button ng-click="vm.makePost()">Post</button>

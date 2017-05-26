@@ -20,5 +20,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/posts', posts);
 
+app.get('/*', (req, res, next) => {
+    res.sendFile('/public/index.html')
+});
 
 export = app;

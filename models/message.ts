@@ -11,7 +11,6 @@ let messageSchema = new mongoose.Schema({
     user: String,
     time: {
         type: Date,
-        default: Date.now
     }
 });
 

@@ -1,13 +1,17 @@
-import * as express from 'express'
-
+import * as express from 'express' 
 import Message from '../models/message' 
 
 var router = express.Router();
 
 /* GET users listing. */
-router.get('/', function(req, res, next) {
-  res.send('respond with a resource');
-  
+router.get('/', function(req, res, next){
+  res.send(Message.find({})
+    .then((messages) =>{
+        res.json(messages)
+    }).catch((err) => {
+        res.status(500);
+        console.log(err)}
+  ));
 });
 
 router.post('/', function(req, res, next){
